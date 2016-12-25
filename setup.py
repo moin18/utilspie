@@ -1,44 +1,53 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
-import sys
-import codecs
+from setuptools import setup, find_packages
+from codecs import open
+from os import path
 
-from setuptools import setup
+here = path.abspath(path.dirname(__file__))
 
-try:
-    # Python 3
-    from os import dirname
-except ImportError:
-    # Python 2
-    from os.path import dirname
+with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
+    long_description = f.read()
 
-here = os.path.abspath(dirname(__file__))
-
-def read(*parts):
-    return codecs.open(os.path.join(here, *parts), 'r').read()
-
-if sys.argv[-1] == "publish":
-    os.system("python setup.py sdist bdist_wheel upload")
-    sys.exit()
-
-# List of required libraries
 required = [
+]
+
+packages = [
+    'utilspie',
+    'utilspie.asyncutils',
+    'utilspie.importutils',
+    'utilspie.fileutils'
 ]
 
 setup(
     name='utilspie',
-    version='0.0.1',
-    description='Utilities for Python Developers',
-    long_description= '\n' + read('README.rst'),
+    version='0.0.2',
+    description='Python Utilities',
+    long_description=long_description,
+    url='https://github.com/moin18/utilspie',
     author='Moinuddin Quadri',
     author_email='moin18@gmail.com',
-    url='https://github.com/moin18/utilspie',
-    py_modules=['utilspie'],
-    install_requires=required,
     license='MIT',
-    classifiers=(
+    classifiers=[
+        # How mature is this project? Common values are
+        #   3 - Alpha
+        #   4 - Beta
+        #   5 - Production/Stable
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Libraries',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+    ],
 
-    ),
+    keywords='utils asyncutils importutils fileutils import file async',
+    packages=packages,
+    install_requires=required,
 )
