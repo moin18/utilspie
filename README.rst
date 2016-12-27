@@ -17,6 +17,10 @@ utilspie: Utilities for Python Developers
    :target: https://github.com/moin18/utilspie/issues
    :alt: contributor-friendly
 
+.. image:: https://img.shields.io/badge/docs-latest-brightgreen.svg
+   :target: http://utilspie.readthedocs.io/en/latest
+   :alt: documentation
+
 Documentation: `utilspie.readthedocs.org <http://utilspie.readthedocs.io/en/latest/>`_
 ---------------------------------------------------------------------------------
 

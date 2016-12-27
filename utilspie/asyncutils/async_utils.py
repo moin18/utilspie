@@ -3,7 +3,7 @@ from multiprocessing import Process, Queue
 
 def async_call(func_list):
     """
-    Runs the list of function asynchronously.
+    Runs the list of function asynchronously, returns the response maintaining the order
 
     :param func_list: Expects list of lists to be of format
         [[func1, args1, kwargs1], [func2, args2, kwargs2], ...]
