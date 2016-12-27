@@ -2,7 +2,7 @@ utilspie: Utilities for Python Developers
 =========================
 
 .. image:: https://img.shields.io/pypi/v/utilspie.svg
-   :target: https://pypi.python.org/moin18/utilspie
+   :target: https://pypi.python.org/pypi/utilspie
    :alt: downloads
 
 .. image:: https://travis-ci.org/moin18/utilspie.svg
@@ -10,8 +10,16 @@ utilspie: Utilities for Python Developers
    :target: https://travis-ci.org/moin18/utilspie
 
 .. image:: https://codecov.io/github/moin18/utilspie/coverage.svg?branch=master
-   :target: https://travis-ci.org/moin18/utilspie
+   :target: https://codecov.io/github/moin18/utilspie
    :alt: Codecov
+
+.. image:: https://img.shields.io/badge/contributions-welcome-brightgreen.svg
+   :target: https://github.com/moin18/utilspie/issues
+   :alt: Contributions
+
+
+What is **utilspie**?
+---------------------
 
 `utilspie` provides utility functions for Python Developer. Currently it has utilities for:
 
