@@ -1,5 +1,5 @@
-utilspie: Utilities for Python Developers
-=========================
+utilspie: Utilities for Python
+==============================
 
 .. image:: https://img.shields.io/pypi/v/utilspie.svg
    :target: https://pypi.python.org/pypi/utilspie
@@ -22,7 +22,7 @@ utilspie: Utilities for Python Developers
    :alt: documentation
 
 Documentation: `utilspie.readthedocs.org <http://utilspie.readthedocs.io/en/latest/>`_
----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
 
 What is **utilspie**?
 ---------------------
