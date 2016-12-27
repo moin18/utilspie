@@ -5,18 +5,20 @@ utilspie: Utilities for Python Developers
    :target: https://pypi.python.org/pypi/utilspie
    :alt: downloads
 
-.. image:: https://travis-ci.org/moin18/utilspie.svg
+.. image:: https://travis-ci.org/moin18/utilspie.svg?branch=master
    :alt: build status
    :target: https://travis-ci.org/moin18/utilspie
 
 .. image:: https://codecov.io/github/moin18/utilspie/coverage.svg?branch=master
    :target: https://codecov.io/github/moin18/utilspie
-   :alt: Codecov
+   :alt: codecov
 
 .. image:: https://img.shields.io/badge/contributions-welcome-brightgreen.svg
    :target: https://github.com/moin18/utilspie/issues
-   :alt: Contributions
+   :alt: contributor-friendly
 
+Documentation: `utilspie.readthedocs.org <http://utilspie.readthedocs.io/en/latest/>`_
+---------------------------------------------------------------------------------
 
 What is **utilspie**?
 ---------------------
