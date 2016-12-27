@@ -1,6 +1,18 @@
 utilspie: Utilities for Python Developers
 =========================
 
+.. image:: https://travis-ci.org/moin18/utilspie.svg
+   :alt: build status
+   :target: https://travis-ci.org/moin18/utilspie
+
+.. image:: https://codecov.io/github/moin18/utilspie/coverage.svg?branch=master
+   :target: https://codecov.io/github/moin18/utilspie
+   :alt: Codecov
+
+.. image:: https://img.shields.io/pypi/v/utilspie.svg
+   :target: https://pypi.python.org/moin18/utilspie
+   :alt: downloads
+
 `utilspie` provides utility functions for Python Developer. Currently it has utilities for:
 
  - Library import: Lazy load module, delete module, reload module
