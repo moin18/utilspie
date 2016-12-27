@@ -1,6 +1,6 @@
-from asyncutils import async_utils
-async_utils.async_call
+import pytest
 
+from utilspie import asyncutils
 
 
 def test_async_call():
@@ -31,8 +31,16 @@ def test_async_call():
     function_results = [func(*args, **kwargs) for func, args, kwargs in test_function_list]
 
     # Results of the functions with asynchronous call
-    async_function_results = async_utils.async_call(test_function_list)
+    async_function_results = asyncutils.async_call(test_function_list)
 
     # Test for success response for the async call
     for expected, result in zip(function_results, async_function_results):
         assert expected == result
+
+    test_function_list_with_exception = test_function_list + [
+        (test_function_raising_exception, (1, 5), {'param3': 3})
+    ]
+
+    # Check for raised exception in async functions
+    with pytest.raises(ValueError):
+        _ = asyncutils.async_call(test_function_list_with_exception)
