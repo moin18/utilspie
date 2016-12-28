@@ -2,9 +2,9 @@
 Utilspie:  Utilities for Python
 ===============================
 
------
-What?
------
+-----------------
+What is utilspie?
+-----------------
 Utilspie is a Python library that offers a sensible, human-friendly utilities which do not come along with Python installation. Utilspie is categorized into 5 modules:
 
 - `asyncutils <http://utilspie.readthedocs.io/en/latest/#utilspie-asyncutils>`_: utilities for asynchronous call/threads
@@ -48,6 +48,7 @@ API Guide
 
 utilspie.asyncutils
 ===================
+Contains utility functions for asynchronous calls.
 
 ordered_async_call
 ------------------
@@ -69,6 +70,7 @@ Values returned are in the order in which functions are passed through ``functio
 
 utilspie.fileutils
 ==================
+Contains utility functions for files related operations.
 
 copy_file
 ---------
@@ -77,7 +79,7 @@ It has 4 optional params:
 
 - **unique**: Copy unique lines of file. Default: ``False``
 - **sort**: Copy sorted content of the file. Default: ``False``
-- **case_sensitive**: Do *unique*/*sort* operation on case-sensitive content. Default: ``True``
+- **case_sensitive**: Do *unique*/*sort* on case-sensitive content. Default: ``True``
 - **create_path**: Create directory to destination file, in case not exists. Default: ``False``
 
 Sample example:
@@ -86,16 +88,53 @@ Sample example:
 
     >>> from utilspie import fileutils
 
-    >>> fileutils.copy_file('/tmp/path/to/source.txt', '/tmp/path/to/destination.txt',
-    ...     unique=True, sort=True, case_sensitive=False, create_path=True)
+    >>> fileutils.copy_file(
+    ...     source='/tmp/path/to/source.txt',
+    ...     destination='/tmp/path/to/destination.txt',
+    ...     unique=True,
+    ...     sort=True,
+    ...     case_sensitive=False,
+    ...     create_path=True)
 
 utilspie.iterutils
 ==================
+Contains utility functions for iterables. It is inspired by **itertools** package.
+
+get_chunks
+----------
+**get_chunks(iterable_obj, chunk_size=1)**: Receives the iterable object ``iterable_obj`` and divides the object in evenly
+sized chunks of size ``chunk_size``. Default value of ``chunk_size=1``. For example:
+
+.. code-block:: python
+
+   >>> from utilspie import iterutils
+
+   >>> iterutils.get_chunks([1, 2, 3, 4, 5, 6], 2)
+   <generator object <genexpr> at 0x1018fab40>
+   # returns generator object
+
+   >>> list(iterutils.get_chunks([1, 2, 3, 4, 5, 6], 2))
+   [[1, 2], [3, 4], [5, 6]]
 
 
 utilspie.collectionsutils
 =========================
+Contains additional data objects not available as in-built in Python. This is inspired by **collections** module.
 
+frozendict
+----------
+**frozendict(dict_obj)**: Accepts obj of ``dict`` type and returns a hashable and immutable ``dict``. For example:
+
+.. code-block:: python
+
+    >>> from utilspie import collectionsutils
+
+    >>> my_dict = collectionsutils.frozendict({1: 2, 3: 4})
+    >>> my_dict   # 'frozendict' type object
+    frozendict({1: 2, 3: 4})
+
+    >>> {my_dict: 3}   # could be used as a 'key' to dict
+    {frozendict({1: 2, 3: 4}): 3}
 
 utilspie.importutils
 ====================
