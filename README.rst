@@ -1,5 +1,5 @@
 utilspie : Utilities for Python
-==============================
+===============================
 
 .. image:: https://img.shields.io/pypi/v/utilspie.svg
    :target: https://pypi.python.org/pypi/utilspie
@@ -53,15 +53,15 @@ For using the utilspie, you have to import the package utilspie and call it's fu
 
 .. code-block:: python
 
-   >>> from utilspie import iterutils
-   # OR, from utilspie.iterutils import get_chunks
+    from utilspie import iterutils
+    # OR, from utilspie.iterutils import get_chunks
 
-   >>> iterutils.get_chunks([1, 2, 3, 4, 5, 6], 2)
-   <generator object <genexpr> at 0x1018fab40>
-   # returns generator object
+    iterutils.get_chunks([1, 2, 3, 4, 5, 6], 2)
+    <generator object <genexpr> at 0x1018fab40>
+    # returns generator object
 
-   >>> list(iterutils.get_chunks([1, 2, 3, 4, 5, 6], 2))
-   [[1, 2], [3, 4], [5, 6]]
+    list(iterutils.get_chunks([1, 2, 3, 4, 5, 6], 2))
+    [[1, 2], [3, 4], [5, 6]]
 
 
 How to Contribute

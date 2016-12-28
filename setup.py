@@ -24,7 +24,7 @@ packages = [
 
 setup(
     name='utilspie',
-    version='0.0.6',
+    version='0.0.11',
     description='Python Utilities',
     long_description=long_description,
     url='https://github.com/moin18/utilspie',
