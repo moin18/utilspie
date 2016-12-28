@@ -1,7 +1,7 @@
 from multiprocessing import Process, Queue
 
 
-def async_call(func_list):
+def ordered_async_call(func_list):
     """
     Runs the list of function asynchronously, returns the response maintaining the order
 

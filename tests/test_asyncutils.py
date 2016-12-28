@@ -31,7 +31,7 @@ def test_async_call():
     function_results = [func(*args, **kwargs) for func, args, kwargs in test_function_list]
 
     # Results of the functions with asynchronous call
-    async_function_results = asyncutils.async_call(test_function_list)
+    async_function_results = asyncutils.ordered_async_call(test_function_list)
 
     # Test for success response for the async call
     for expected, result in zip(function_results, async_function_results):
@@ -43,4 +43,4 @@ def test_async_call():
 
     # Check for raised exception in async functions
     with pytest.raises(ValueError):
-        _ = asyncutils.async_call(test_function_list_with_exception)
+        _ = asyncutils.ordered_async_call(test_function_list_with_exception)

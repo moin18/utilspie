@@ -49,11 +49,30 @@ API Guide
 utilspie.asyncutils
 ===================
 
+ordered_async_call(function_list)
+---------------------------------
+Asynchronously executes the list of passed functions, and return the `['list', 'of', 'values']` returned by each function.
+Values returned are in the order in which functions are passed through `function_list`. `function_list` should be of the format:
+`[(function_1, args_1, kwargs_1), (function_2, args_2, kwargs_2), ...]`. For example:
+
+.. code-block:: python
+
+    >>> from utilspie import asyncutils
+    >>> def foo(x, y):
+    ...     return x + y
+    ...
+    >>> func_list = [(foo, [0], {'y': 5}), (foo, [8, 9], {}), (foo, [], {'x': 77, 'y': 4})]
+
+    >>> asyncutils.ordered_async_call(func_list)
+    [5, 17, 81]
 
 
 utilspie.fileutils
 ==================
 
+copy_file(source, destination, unique=False, sort=False, case_sensitive=True, create_path=False)
+------------------------------------------------------------------------------------------------
+Copy file from `source` path to `destination` path
 
 
 utilspie.iterutils
