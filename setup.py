@@ -17,12 +17,14 @@ packages = [
     'utilspie',
     'utilspie.asyncutils',
     'utilspie.importutils',
-    'utilspie.fileutils'
+    'utilspie.fileutils',
+    'utilspie.iterutils',
+    'utilspie.collectionsutils',
 ]
 
 setup(
     name='utilspie',
-    version='0.0.4',
+    version='0.0.6',
     description='Python Utilities',
     long_description=long_description,
     url='https://github.com/moin18/utilspie',

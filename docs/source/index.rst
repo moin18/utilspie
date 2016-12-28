@@ -1,20 +1,77 @@
-.. utilspie documentation master file, created by
-   sphinx-quickstart on Wed Dec 28 00:03:30 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+===============================
+Utilspie:  Utilities for Python
+===============================
 
-Welcome to utilspie's documentation!
-====================================
+-----
+What?
+-----
+Utilspie is a Python library that offers a sensible, human-friendly utilities which do not come along with Python installation. Utilspie is categorized into 5 modules:
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+- asyncutils : utilities for asynchronous call/threads
+- fileutils : utilities related to file operations/manipulations
+- iterutils : utilities for iterators. Inspired by `itertools <https://docs.python.org/2/library/itertools.html>`_ package
+- collectionsutils : provides data objects not present in `collections <https://docs.python.org/2/library/collections.html>`_ package
+- importutils : utilities related to importing the modules
+
+------------
+Installation
+------------
+**utilspie** is available on `pypi <https://pypi.python.org/pypi/utilspie>`_. To install, run:
+
+.. code-block:: bash
+
+    $ pip install utilspie
+
+Source code for utilspie is available on `github <https://github.com/moin18/utilspie>`_
+
+-----------
+Quick Start
+-----------
+For using the utilspie, you have to import the package utilspie and call it's function as:
+
+.. code-block:: python
+
+   >>> from utilspie import iterutils
+   # OR, from utilspie.iterutils import get_chunks
+
+   >>> iterutils.get_chunks([1, 2, 3, 4, 5, 6], 2)
+   <generator object <genexpr> at 0x1018fab40>
+   # returns generator object
+
+   >>> list(iterutils.get_chunks([1, 2, 3, 4, 5, 6], 2))
+   [[1, 2], [3, 4], [5, 6]]
 
 
+---------
+API Guide
+---------
 
-Indices and tables
+utilspie.asyncutils
+===================
+
+.. automodule:: utilspie.asyncutils.async_utils
+    :members:
+
+utilspie.fileutils
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. automodule:: utilspie.fileutils.file_utils
+    :members:
+
+utilspie.iterutils
+==================
+
+.. automodule:: utilspie.iterutils.iter_utils
+    :members:
+
+utilspie.collectionsutils
+=========================
+
+.. automodule:: utilspie.collectionsutils.collections_utils
+    :members:
+
+utilspie.importutils
+====================
+
+.. automodule:: utilspie.importutils.import_utils
+    :members:
