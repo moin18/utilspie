@@ -7,11 +7,11 @@ What?
 -----
 Utilspie is a Python library that offers a sensible, human-friendly utilities which do not come along with Python installation. Utilspie is categorized into 5 modules:
 
-- asyncutils : utilities for asynchronous call/threads
-- fileutils : utilities related to file operations/manipulations
-- iterutils : utilities for iterators. Inspired by `itertools <https://docs.python.org/2/library/itertools.html>`_ package
-- collectionsutils : provides data objects not present in `collections <https://docs.python.org/2/library/collections.html>`_ package
-- importutils : utilities related to importing the modules
+- `asyncutils <http://utilspie.readthedocs.io/en/latest/#utilspie-asyncutils>`_: utilities for asynchronous call/threads
+- `fileutils <http://utilspie.readthedocs.io/en/latest/#utilspie-fileutils>`_: utilities related to file operations/manipulations
+- `iterutils <http://utilspie.readthedocs.io/en/latest/#utilspie-iterutils>`_: utilities for iterators. Inspired by `itertools <https://docs.python.org/2/library/itertools.html>`_ package
+- `collectionsutils <http://utilspie.readthedocs.io/en/latest/#utilspie-collectionsutils>`_: provides data objects not present in `collections <https://docs.python.org/2/library/collections.html>`_ package
+- `importutils <http://utilspie.readthedocs.io/en/latest/#utilspie-importutils>`_: utilities related to importing the modules
 
 ------------
 Installation
@@ -49,29 +49,21 @@ API Guide
 utilspie.asyncutils
 ===================
 
-.. automodule:: utilspie.asyncutils.async_utils
-    :members:
+
 
 utilspie.fileutils
 ==================
 
-.. automodule:: utilspie.fileutils.file_utils
-    :members:
+
 
 utilspie.iterutils
 ==================
 
-.. automodule:: utilspie.iterutils.iter_utils
-    :members:
 
 utilspie.collectionsutils
 =========================
 
-.. automodule:: utilspie.collectionsutils.collections_utils
-    :members:
 
 utilspie.importutils
 ====================
 
-.. automodule:: utilspie.importutils.import_utils
-    :members:

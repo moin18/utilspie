@@ -1,8 +1,14 @@
 
 
 class frozendict(dict):
+    """
+    Hashable and immutable dict object
+
+    For example:
+    frozendict_object = frozendict({1: 2, 3: 4})
+    """
     def __key(self):
-        return tuple((k,self[k]) for k in sorted(self))
+        return tuple((key, self[key]) for key in sorted(self))
 
     def __hash__(self):
         return hash(self.__key())
