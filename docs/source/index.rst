@@ -138,11 +138,52 @@ frozendict
 
 utilspie.importutils
 ====================
-
-.. currentmodule:: import_utils
-.. autofunction:: delete_module
+Utilities related to importing the modules.
 
 
-.. currentmodule:: import_utils
-.. autofunction:: reload_module
+lazy_load_modules
+-----------------
+**lazy_load_modules(*modules)**: is a decorator which could be used over functions to use modules within function
+which you do not want to reside in *sys.modules*. Ideal for using modules that uses too much system's memory and are
+not frequently used. For example:
 
+.. code-block:: python
+
+    >>> from utilspie import importutils
+
+    >>> @importutils.lazy_load_modules('idna', 'some_other_module')
+    ... def foo(x, y):
+    ...     import idna, some_other_module
+    ...     # Do somethings return
+    ...
+
+    >>> foo(1, 2)
+    # 'idna' and 'some_other_module' won't be available outside the function
+
+
+**Note**: The module you are passing to ``lazy_load_modules`` should not contain any reference outside the decorated function.
+In case any reference exist, *garbage-collector* will fail to free the memory.
+
+reload_module
+-------------
+**reload_module(module)**: It reloads a previously imported module. It is based on `reload <https://docs.python.org/2/library/functions.html#reload>`_
+in Python2.x, `imp.reload <https://docs.python.org/3/library/imp.html#imp.reload>`_ in <= Python 3.3 and `importlib.reload <https://docs.python.org/3/library/importlib.html#importlib.reload>`_
+in Python >= 3.3. But this *reload_module()* is compatible with all Python verisons.
+
+.. code-block:: python
+
+    >>> from utilspie import importutils
+
+    >>> importutils.reload('my.module')
+
+
+delete_module
+-------------
+**delete_module(modname)**: It deletes the entry of ``modname`` module from  ``sys.modules`` dict. The memory will be later freed
+by *garbage-collector* only if there do not exists any reference to that module.
+
+.. code-block:: python
+
+    >>> from utilspie import importutils
+
+    >>> importutils.delete_module('my.module')
