@@ -69,106 +69,43 @@ API Guide
 ---------
 
 utilspie.asyncutils
-===================
+-------------------
 Contains utility functions for asynchronous calls.
 
-ordered_async_call(function_list)
----------------------------------
-Asynchronously executes the list of passed functions, and return the ``['list', 'of', 'values']`` returned by each function.
-Values returned are in the order in which functions are passed through ``function_list``. ``function_list`` should be of the format:
-``[(function_1, args_1, kwargs_1), (function_2, args_2, kwargs_2), ...]``. For example:
-
-.. code-block:: python
-
-    >>> from utilspie import asyncutils
-    >>> def foo(x, y):
-    ...     return x + y
-    ...
-    >>> func_list = [(foo, [0], {'y': 5}), (foo, [8, 9], {}), (foo, [], {'x': 77, 'y': 4})]
-
-    >>> asyncutils.ordered_async_call(func_list)
-    [5, 17, 81]
+- **ordered_async_call(function_list)**
 
 
 utilspie.fileutils
-==================
+------------------
 Contains utility functions for files related operations.
 
-copy_file(source, destination, unique, sort, case_sensitive, create_path)
--------------------------------------------------------------------------
-Copy file from ``source`` path to ``destination`` path.
-It has 4 optional params:
+- **copy_file(source, destination, unique, sort, case_sensitive, create_path)**
 
-- **unique**: Copy unique lines of file. Default: ``False``
-- **sort**: Copy sorted content of the file. Default: ``False``
-- **case_sensitive**: Do *unique*/*sort* on case-sensitive content. Default: ``True``
-- **create_path**: Create directory to destination file, in case not exists. Default: ``False``
-
-Sample example:
-
-.. code-block:: python
-
-    >>> from utilspie import fileutils
-
-    >>> fileutils.copy_file(
-    ...     source='/tmp/path/to/source.txt',
-    ...     destination='/tmp/path/to/destination.txt',
-    ...     unique=True,
-    ...     sort=True,
-    ...     case_sensitive=False,
-    ...     create_path=True)
 
 utilspie.iterutils
-==================
+------------------
 Contains utility functions for iterables. It is inspired by **itertools** package.
 
-get_chunks(iterable_obj, chunk_size)
---------------------------------------
-Receives the iterable object ``iterable_obj`` and divides the object in evenly
-sized chunks of size ``chunk_size``. Default value of ``chunk_size=1``. For example:
-
-.. code-block:: python
-
-   >>> from utilspie import iterutils
-
-   >>> iterutils.get_chunks([1, 2, 3, 4, 5, 6], 2)
-   <generator object <genexpr> at 0x1018fab40>
-   # returns generator object
-
-   >>> list(iterutils.get_chunks([1, 2, 3, 4, 5, 6], 2))
-   [[1, 2], [3, 4], [5, 6]]
+- **get_chunks(iterable_obj, chunk_size)**
 
 
 utilspie.collectionsutils
-=========================
+-------------------------
 Contains additional data objects not available as in-built in Python. This is inspired by **collections** module.
 
-frozendict(dict_obj)
---------------------
-Accepts obj of ``dict`` type and returns a hashable and immutable ``dict``. For example:
+- **frozendict(dict_obj)**
 
-.. code-block:: python
-
-    >>> from utilspie import collectionsutils
-
-    >>> my_dict = collectionsutils.frozendict({1: 2, 3: 4})
-    >>> my_dict   # 'frozendict' type object
-    frozendict({1: 2, 3: 4})
-
-    >>> {my_dict: 3}   # could be used as a 'key' to dict
-    {frozendict({1: 2, 3: 4}): 3}
 
 utilspie.importutils
-====================
+--------------------
+Contains utilites related to importing the modules.
 
-.. currentmodule:: import_utils
-.. autofunction:: delete_module
-
-
-.. currentmodule:: import_utils
-.. autofunction:: reload_module
+- **delete_module(module)**
+- **reload_module(module)**
+- **lazy_load_modules(*modules)**
 
 
+------------------
 How to Contribute?
 ------------------
 
