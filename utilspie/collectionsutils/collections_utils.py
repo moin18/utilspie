@@ -1,0 +1,49 @@
+from ..exceptions import MethodCallNotAllowed
+
+
+class FrozenDict(dict):
+    def __key(self):
+        return tuple((k,self[k]) for k in sorted(self))
+
+    def __hash__(self):
+        return hash(self.__key())
+
+    def __eq__(self, other):
+        return self.__key() == other.__key()
+
+    def update(self, *args, **kwargs):
+        raise MethodCallNotAllowed("You can not call '{}()' for '{}' object".format(
+            self.update.__name__, type(self).__name__))
+
+    def pop(self, *args, **kwargs):
+        raise MethodCallNotAllowed("You can not call '{}()' for '{}' object".format(
+            self.pop.__name__, type(self).__name__))
+
+    def popitem(self, *args, **kwargs):
+        raise MethodCallNotAllowed("You can not call '{}()' for '{}' object".format(
+            self.popitem.__name__, type(self).__name__))
+
+    def setdefault(self, *args, **kwargs):
+        raise MethodCallNotAllowed("You can not call '{}()' for '{}' object".format(
+            self.setdefault.__name__, type(self).__name__))
+
+    def clear(self, *args, **kwargs):
+        raise MethodCallNotAllowed("You can not call '{}()' for '{}' object".format(
+            self.clear.__name__, type(self).__name__))
+
+    def __setitem__(self, *args, **kwargs):
+        raise MethodCallNotAllowed("You can not call '{}()' for '{}' object".format(
+            self.__setitem__.__name__, type(self).__name__))
+
+    def __setattr__(self, *args, **kwargs):
+        raise MethodCallNotAllowed("You can not call '{}()' for '{}' object".format(
+            self.__setattr__.__name__, type(self).__name__))
+
+    def __delitem__(self, *args, **kwargs):
+        raise MethodCallNotAllowed("You can not call '{}()' for '{}' object".format(
+            self.__delitem__.__name__, type(self).__name__))
+
+    def __delattr__(self, *args, **kwargs):
+        raise MethodCallNotAllowed("You can not call '{}()' for '{}' object".format(
+            self.__delattr__.__name__, type(self).__name__))
+
