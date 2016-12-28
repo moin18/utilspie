@@ -34,9 +34,9 @@ For using the utilspie, you have to import the package utilspie and call it's fu
    >>> from utilspie import iterutils
    # OR, from utilspie.iterutils import get_chunks
 
+   # returns generator object
    >>> iterutils.get_chunks([1, 2, 3, 4, 5, 6], 2)
    <generator object <genexpr> at 0x1018fab40>
-   # returns generator object
 
    >>> list(iterutils.get_chunks([1, 2, 3, 4, 5, 6], 2))
    [[1, 2], [3, 4], [5, 6]]
@@ -62,7 +62,10 @@ Values returned are in the order in which functions are passed through ``functio
     >>> def foo(x, y):
     ...     return x + y
     ...
-    >>> func_list = [(foo, [0], {'y': 5}), (foo, [8, 9], {}), (foo, [], {'x': 77, 'y': 4})]
+    >>> func_list = [
+    ...     (foo, [0], {'y': 5}),
+    ...     (foo, [8, 9], {}),
+    ...     (foo, [], {'x': 77, 'y': 4})]
 
     >>> asyncutils.ordered_async_call(func_list)
     [5, 17, 81]
@@ -136,6 +139,28 @@ frozendict
     >>> {my_dict: 3}   # could be used as a 'key' to dict
     {frozendict({1: 2, 3: 4}): 3}
 
+
+swap_dict
+---------
+**swap_dict(dict_obj, multivalued=True)**: Swaps the *(key, value)* pair of ``dict`` to the *(value, key)* pair. If
+``multivalued`` is set as ``True``, returns the *value* of dict as ``list`` of *key* in original dict. If ``multivalued`` is
+set as ``False``, returns the single *key* as *value* discarding the duplicates. Default value of ``multivalued=True``.
+For example:
+
+.. code-block:: python
+
+    >>> from utilspie import collectionsutils
+
+    # multivalued `True`
+    >>> collectionsutils.swap_dict({1: 2, 3: 2})
+    {2: [1, 3]}
+
+    # multivalued `False`
+    >>> collectionsutils.swap_dict({1: 2, 3: 2},
+    ...                     multivalued=False)
+    {2: 3}
+
+
 utilspie.importutils
 ====================
 Utilities related to importing the modules.
@@ -158,7 +183,8 @@ not frequently used. For example:
     ...
 
     >>> foo(1, 2)
-    # 'idna' and 'some_other_module' won't be available outside the function
+    # 'idna' and 'some_other_module' won't be
+    # available outside the function
 
 
 **Note**: The module you are passing to ``lazy_load_modules`` should not contain any reference outside the decorated function.

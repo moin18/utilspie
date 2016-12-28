@@ -1,3 +1,4 @@
+from collections import defaultdict
 
 
 class frozendict(dict):
@@ -54,3 +55,15 @@ class frozendict(dict):
     def __delattr__(self, *args, **kwargs):
         raise AttributeError("You can not call '{}()' for '{}' object".format(
             self.__delattr__.__name__, type(self).__name__))
+
+
+def swap_dict(dict_obj, multivalued=True):
+    if multivalued:
+        new_dict = defaultdict(list)
+        for k, v in dict_obj.items():
+            new_dict[v].append(k)
+        new_dict = dict(new_dict)
+    else:
+        new_dict = {v: k for k, v in dict_obj.items()}
+
+    return new_dict

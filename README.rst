@@ -89,21 +89,24 @@ Contains utility functions for iterables. It is inspired by **itertools** packag
 
 - `get_chunks(iterable_obj, chunk_size) <http://utilspie.readthedocs.io/en/latest/#get-chunks>`_
 
+
 -------------------------
 utilspie.collectionsutils
 -------------------------
 Contains additional data objects not available as in-built in Python. This is inspired by **collections** module.
 
 - `frozendict(dict_obj) <http://utilspie.readthedocs.io/en/latest/#frozendict>`_
+- `swap_dict(dict_obj, multivalued) <http://utilspie.readthedocs.io/en/latest/#swap-dict>`_
+
 
 --------------------
 utilspie.importutils
 --------------------
 Contains utilites related to importing the modules.
 
-- `lazy_load_modules(*modules) <http://utilspie.readthedocs.io/en/latest/#lazy_load_modules>`_
-- `reload_module(module) <http://utilspie.readthedocs.io/en/latest/#reload_module>`_
-- `delete_module(modname) <http://utilspie.readthedocs.io/en/latest/#delete_module>`_
+- `lazy_load_modules(*modules) <http://utilspie.readthedocs.io/en/latest/#lazy-load-modules>`_
+- `reload_module(module) <http://utilspie.readthedocs.io/en/latest/#reload-module>`_
+- `delete_module(modname) <http://utilspie.readthedocs.io/en/latest/#delete-module>`_
 
 
 How to Contribute?
