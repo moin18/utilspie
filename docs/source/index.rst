@@ -49,11 +49,11 @@ API Guide
 utilspie.asyncutils
 ===================
 
-ordered_async_call(function_list)
----------------------------------
-Asynchronously executes the list of passed functions, and return the `['list', 'of', 'values']` returned by each function.
-Values returned are in the order in which functions are passed through `function_list`. `function_list` should be of the format:
-`[(function_1, args_1, kwargs_1), (function_2, args_2, kwargs_2), ...]`. For example:
+ordered_async_call
+------------------
+**ordered_async_call(function_list)**: Asynchronously executes the list of passed functions, and return the ``['list', 'of', 'values']`` returned by each function.
+Values returned are in the order in which functions are passed through ``function_list``. ``function_list`` should be of the format:
+``[(function_1, args_1, kwargs_1), (function_2, args_2, kwargs_2), ...]``. For example:
 
 .. code-block:: python
 
@@ -70,10 +70,24 @@ Values returned are in the order in which functions are passed through `function
 utilspie.fileutils
 ==================
 
-copy_file(source, destination, unique=False, sort=False, case_sensitive=True, create_path=False)
-------------------------------------------------------------------------------------------------
-Copy file from `source` path to `destination` path
+copy_file
+---------
+**copy_file(source, destination, unique=False, sort=False, case_sensitive=True, create_path=False)**: Copy file from ``source`` path to ``destination`` path.
+It has 4 optional params:
 
+- **unique**: Copy unique lines of file. Default: ``False``
+- **sort**: Copy sorted content of the file. Default: ``False``
+- **case_sensitive**: Do *unique*/*sort* operation on case-sensitive content. Default: ``True``
+- **create_path**: Create directory to destination file, in case not exists. Default: ``False``
+
+Sample example:
+
+.. code-block:: python
+
+    >>> from utilspie import fileutils
+
+    >>> fileutils.copy_file('/tmp/path/to/source.txt', '/tmp/path/to/destination.txt',
+    ...     unique=True, sort=True, case_sensitive=False, create_path=True)
 
 utilspie.iterutils
 ==================
@@ -85,4 +99,11 @@ utilspie.collectionsutils
 
 utilspie.importutils
 ====================
+
+.. currentmodule:: import_utils
+.. autofunction:: delete_module
+
+
+.. currentmodule:: import_utils
+.. autofunction:: reload_module
 
