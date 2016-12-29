@@ -43,8 +43,6 @@ Installation
 
     $ pip install utilspie
 
-Source code for utilspie is available on `github <https://github.com/moin18/utilspie>`_.
-
 
 Quick Start
 -----------
