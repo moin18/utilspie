@@ -213,3 +213,10 @@ by *garbage-collector* only if there do not exists any reference to that module.
     >>> from utilspie import importutils
 
     >>> importutils.delete_module('my.module')
+
+
+--------------------------
+Didn't find what you want?
+--------------------------
+Are you looking for something which you think should be the part of *utilspie* but is not currently present? Feel free to mention it by
+opening a `issue <https://github.com/moin18/utilspie/issues>`_. We will take a look at it, and will implement it if it's a good fit.
